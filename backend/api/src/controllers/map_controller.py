@@ -9,7 +9,6 @@ from mongoengine.errors import DoesNotExist, FieldDoesNotExist, ValidationError
 import json
 
 class MapController():
-    
     @staticmethod
     def get_maps():
         try:
@@ -69,7 +68,6 @@ class MapController():
                 map.save()
 
                 return Response(data=map, status=HTTPStatus.OK)
-                
             except (ValidationError, DoesNotExist):
                 return Response(status=HTTPStatus.NOT_FOUND)
 

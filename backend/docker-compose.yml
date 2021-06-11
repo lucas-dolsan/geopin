@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    command: python geopin.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/api
+  database:
+    image: 'mongo'
+    container_name: 'database'
+    ports:
+      - '27017-27019:27017-27019' 

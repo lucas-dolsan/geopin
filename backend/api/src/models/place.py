@@ -1,4 +1,3 @@
-
 from models.base_model import BaseModel
 from mongoengine.document import EmbeddedDocument
 
