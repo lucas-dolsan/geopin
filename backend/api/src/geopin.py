@@ -10,3 +10,5 @@ import resources.maps
 
 if __name__ == "__main__":
     app.run(debug=True)
+from models.map import Map
+Map.objects.filter()

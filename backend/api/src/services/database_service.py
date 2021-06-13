@@ -21,12 +21,12 @@ class DatabaseService:
 
     @staticmethod
     def connect_to_database():
-            print_database_settings(settings)
+            DatabaseService.print_database_settings(settings)
             connection = mongoengine.connect(
                 settings['DATABASE_NAME'],
                 host=settings['DATABASE_HOST'],
                 port=settings['DATABASE_PORT'],
                 serverSelectionTimeoutMS=1500
             )
-            test_database_connection(connection)
+            DatabaseService.test_database_connection(connection)
 

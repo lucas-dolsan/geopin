@@ -1,14 +1,18 @@
 version: "3.8"
 services:
   api:
-    build: .
-    command: python geopin.py
+    build: api/
+    command: python geopin.py 
     ports:
       - "5000:5000"
-    volumes:
-      - .:/api
+    environment: 
+     - DATABASE_HOST=database
+     - DATABASE_PORT=27017
+     - DATABASE_NAME=geopin
   database:
     image: 'mongo'
     container_name: 'database'
+    depends_on: 
+     - api
     ports:
       - '27017-27019:27017-27019' 
